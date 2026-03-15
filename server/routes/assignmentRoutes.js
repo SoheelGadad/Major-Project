@@ -4,7 +4,7 @@ const router = express.Router();
 const Assignment = require('../models/Assignment');
 
 // Create an assignment
-router.post('/assignments', async (req, res) => {
+router.post('/', async (req, res) => {
     const { userId, assetId, assignmentDate } = req.body;
     try {
         const newAssignment = new Assignment({ userId, assetId, assignmentDate});
@@ -15,7 +15,7 @@ router.post('/assignments', async (req, res) => {
     }
 });
 // Get a specific assignment by ID
-router.get("/assignments/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   const assetId = req.params.id;
   try {
     const details = await Asset.findOne({ assetId: assetId });
@@ -29,7 +29,7 @@ router.get("/assignments/:id", async (req, res) => {
 });
 
 // Get all assignments
-router.get('/assignments', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const assignments = await Assignment.find();
         res.json(assignments);

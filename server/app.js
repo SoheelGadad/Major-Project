@@ -46,7 +46,7 @@ app.post('/api/users', async (req, res) => {
 
 
 
-app.post('/assignments', async (req, res) => {
+app.post('/api/assignments', async (req, res) => {
     const { userId, assetId, assignmentDate, status } = req.body;
     try {
         const newAssignment = new Assignment({ userId, assetId, assignmentDate, status });
@@ -56,10 +56,6 @@ app.post('/assignments', async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
-
-
-
-
 
 
 

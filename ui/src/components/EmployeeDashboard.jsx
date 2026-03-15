@@ -6,7 +6,7 @@ import backgroundImage from '/src/assets/images/pexels-karolina-grabowska-446773
 const EmployeeDashboard = () => {
    
     const [assignedAssets, setAssignedAssets] = useState([]);
-    const [employee, setEmployee] = useState({});
+    const [employee, setEmployee] = useState(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -55,7 +55,7 @@ const EmployeeDashboard = () => {
                 {/* <div className="text-2xl font-bold text-center mb-6 text-black">Employee Dashboard</div> */}
                 {error && <p className="text-red-500 text-center">{error}</p>}
                 <div className="text-center text-3xl mb-4 text-black bg-blue-100 p-4 rounded-lg">
-                    <span className="font-bold text-gray-900">Keep shining,</span> <span className="font-bold text-blue-600">{employee.username}</span>! Your efforts are inspiring!
+                    <span className="font-bold text-gray-900">Keep shining,</span> <span className="font-bold text-blue-600">{employee?.username}</span>! Your efforts are inspiring!
                 </div>
                 <div className="overflow-x-auto">
                     <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
